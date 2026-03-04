@@ -174,10 +174,10 @@ export default function HomeLayout() {
             </>
           }
           navLinks={navItems.map(item => ({ label: item.name, href: item.link }))}
-          mainText="Atención dental de calidad. Pierde el miedo y recupera tu sonrisa con nosotras."
+          mainText="Atención dental de calidad. Pierde el miedo y recupera tu sonrisa con nosotros."
           readMoreLink="https://wa.me/56982623887?text=Hola,%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico"
           readMoreText="Agenda tu Diagnóstico"
-          imageSrc="/hero.png"
+          imageSrc="/hero.webp"
           imageAlt="Be Smile Clínica Dental"
           overlayText={{
             part1: 'sonrisa',
@@ -513,7 +513,7 @@ export default function HomeLayout() {
               Be Smile
             </h3>
             <p className="text-sm text-slate-400">
-              Atención dental de calidad. Pierde el miedo y agenda tu diagnóstico con nosotras en Temuco.
+              Atención dental de calidad. Pierde el miedo y agenda tu diagnóstico con nosotros en Temuco.
             </p>
           </div>
 
@@ -541,7 +541,7 @@ export default function HomeLayout() {
               </li>
               <li className="flex items-start gap-3">
                 <MessageSquare className="h-5 w-5 text-pink-500 shrink-0 mt-0.5" />
-                <span>@besmileclinicadental</span>
+                <a href="mailto:contacto@besmile.cl" className="hover:text-pink-400 transition-colors">contacto@besmile.cl</a>
               </li>
               <li className="flex items-start gap-3">
                 <Home className="h-5 w-5 text-pink-500 shrink-0 mt-0.5" />
@@ -596,6 +596,31 @@ export default function HomeLayout() {
             />
           </div>
           <p className="text-center text-sm text-slate-500">&copy; {new Date().getFullYear()} Be Smile Clínica Dental. Todos los derechos reservados.</p>
+          <p className="text-center text-sm text-slate-600 mt-2">
+            Desarrollado por{' '}
+            {(() => {
+              const [copied, setCopied] = useState(false);
+              return (
+                <span className="relative inline-block">
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText('contacto.joaquinweb@gmail.com');
+                      setCopied(true);
+                      setTimeout(() => setCopied(false), 2500);
+                    }}
+                    className="text-pink-400 hover:text-pink-300 font-medium transition-colors cursor-pointer"
+                  >
+                    Joaquín Silva
+                  </button>
+                  {copied && (
+                    <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-xs px-3 py-1.5 rounded-lg shadow-lg whitespace-nowrap animate-fade-in">
+                      ✓ Correo copiado!
+                    </span>
+                  )}
+                </span>
+              );
+            })()}
+          </p>
         </div>
       </footer>
 
