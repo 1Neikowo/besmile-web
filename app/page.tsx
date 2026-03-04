@@ -115,7 +115,7 @@ export default function HomeLayout() {
       href: "#contacto",
       cta: "Saber más",
       className: "lg:col-start-3 lg:col-end-4 lg:row-start-3 lg:row-end-4",
-      background: <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-white dark:from-emerald-900/20 dark:to-slate-900" />,
+      background: <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-white dark:from-emerald-900/20 dark:to-slate-900" />,
       details: [
         "Aplicación profesional de flúor en gel o barniz",
         "Fortalece el esmalte dental",
